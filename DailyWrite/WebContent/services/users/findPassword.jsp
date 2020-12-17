@@ -20,7 +20,9 @@
 	findPasswordDto.setUserPhonenumber(userPhonenumber);
 	findPasswordDto.setUserPassword(userPassword);
 	
-	if(!userPassword.equals(userPasswordAccept)) {
+	if(userEmail.equals("") || userPhonenumber.equals("") || userPassword.equals("")) {
+		response.sendRedirect("findPasswordForm.jsp?errorMessage=4");
+	} else if(!userPassword.equals(userPasswordAccept)) {
 		response.sendRedirect("findPasswordForm.jsp?errorMessage=3");
 	} else {
 		int findPasswordResult = userDao.findPassword(findPasswordDto);

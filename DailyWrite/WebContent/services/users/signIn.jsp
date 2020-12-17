@@ -19,15 +19,21 @@
 	
 	UserDto signInResult = userDao.signIn(signInDto);
 	
-	if(signInResult != null) {
-		session.setAttribute("userId", signInResult.getUserId());
-		session.setAttribute("userEmail", signInResult.getUserEmail());
-		session.setAttribute("userNickname", signInResult.getUserNickname());
-		
-		response.sendRedirect("/daily_write/services/boards/list.jsp");
-	} else {
+	if(userEmail.equals("") || userPassword.equals("")) {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
-		response.sendRedirect("signInForm.jsp?errorMessage=" + 1);
+		response.sendRedirect("signInForm.jsp?errorMessage=" + 2);
+	} else {
+		if(signInResult != null) {
+			session.setAttribute("userId", signInResult.getUserId());
+			session.setAttribute("userEmail", signInResult.getUserEmail());
+			session.setAttribute("userNickname", signInResult.getUserNickname());
+			
+			response.sendRedirect("/daily_write/services/boards/list.jsp");
+		} else {
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=utf-8");
+			response.sendRedirect("signInForm.jsp?errorMessage=" + 1);
+		}
 	}
 %>

@@ -5,13 +5,91 @@
 	<title>DAILY WRITER</title>
 </head>
 <body>
-	<div>
-		<div><a href="users/signInForm.jsp">입장</a></div>
+	<div class="background">
+		<div class="main-title">
+			<p class="main-title-text">Daily Writer</p>
+		</div>
+		<div class="sub-title">
+			<p class="sub-title-text">당신의 하루를 들려주세요</p>
+		</div>
+		<div class="total-area">
+			<a href="users/signInForm.jsp">
+				<div class="normal-button">
+					<p class="normal-button-text">들어가기</p>
+				</div>
+			</a>
+		</div>
 	</div>
 </body>
 
 <style>
-body {
-	background: url("assets/commons/background.jpeg");
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
+
+.background {
+	background: url("../assets/commons/background.jpeg");
+	border: 0;
+	padding: 0;
+	min-height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.main-title {
+	padding-top: 180px;
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+
+.main-title-text {
+	font-size: 60px;
+	font-weight: 900;
+	color: white;
+	font-family: Georgia, Serif;
+}
+
+.sub-title {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+
+.sub-title-text {
+	font-size: 24px;
+	font-weight: 900;
+	color: white;
+	font-family: Georgia, Serif;
+}
+
+.total-area {
+	width: 100%;
+}
+
+.normal-button {
+	margin: auto;
+	width: 300px;
+	height: 60px;
+	background-color: #28A0FF;
+	border-radius: 10px;
+	border: 2px solid #28A0FF;
+	text-align: center;
+}
+
+.normal-button:hover {
+	cursor: pointer;
+	background-color: #96C7ED;
+}
+
+.normal-button-text {
+	color: white;
+	font-size: 18px;
+	font-weight: 800;
+	font-family: Impact, Charcoal, sans-serif;
+}
+
+a { text-decoration:none ; color:#000000}
 </style>
