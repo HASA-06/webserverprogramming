@@ -3,7 +3,7 @@ package daily_write;
 public class Config {
 	private final String dbUrl = "jdbc:mysql://localhost:3306/daily_writer?serverTimezone=UTC";
 	private final String id = "root";
-	private final String password = "mn196860";
+	private final String password = "";
 	private final String driverName = "com.mysql.cj.jdbc.Driver";
 	
 	public Config() {
